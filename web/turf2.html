@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Champions Arena Turf</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+
+    <body style="background-image: url('img/turf2bg.jpg')">
+        <h1 class="w3-bar-item w3-button w3-black w3-mobile">Champions Arena Turf</h1><br>
+        <span class="w3-bar-item w3-button w3-white w3-mobile" style="font-size: 150%; ">Address:Datt Mandir Rd, next to Vriksha Nakshatra Garden,Sheetal Nagar, Virar West, Virar, Maharashtra 401303</span><br><br>
+        <button  class="w3-bar-item w3-button w3-green w3-mobile" style="alignment-adjust: central" id="myButton" onclick="myFunction()">View on Maps</button>
+        <br><br>
+        <img class="center"  style="border: 5px solid green; display: block; margin-left: auto; margin-right: auto; width: 80%; height:auto;" src="img/ChampionsTurf.jpg" height="600" width="900" alt="">
+        <script type="text/javascript">
+            document.getElementById("myButton").onclick = function () {
+                location.href = "https://www.google.com/maps/place/Champions+Arena+Sports+Turf/@19.4527287,72.8022221,17z/data=!3m1!4b1!4m5!3m4!1s0x3be7a9b32250de33:0x5c54e00f16ea7432!8m2!3d19.4527287!4d72.8044108";
+            };
+        </script>
+    </body>
+</html>

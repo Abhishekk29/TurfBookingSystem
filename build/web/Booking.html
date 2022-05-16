@@ -1,0 +1,164 @@
+<html>
+
+    <title>Legends Turf Booking</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="booking.css">
+
+    <body>
+        <div id='login-form' class='login-page'>
+            <div class="form-box">
+                <form align="center" method="post" action="BookingServlet">
+                    <fieldset>
+                        <legend><b>Booking Details</b></legend>
+                        <label>Enter Username:</label><br> 
+                        <input type="text" name="t1" required=""><br><br>
+                        <label>Enter Full name:</label><br>
+                        <input type="text" name="t2" required=""><br><br>
+                        <label>Enter Email: </label><br>
+                        <input type="text" name="t4" required=""><br><br>
+                        <label>Enter Mobile no:</label><br>
+                        <input name="t5" required=""><br><br> 
+                        <label>Date:</label><br>
+                        <input type="date" id="currentDate" name="dt">
+                        <br><br>
+                        <label for="turfs">Selected turf: </label><br>
+                        <input type="text" value="Legends Turf" name="turf1" readonly><br><br>
+                        <label>Time: </label><br>
+                        <select name="Time" id="Time" onchange="calculateAmount()" required>
+                            <option value="" disabled selected>Select Time</option>
+
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="13:00 PM">13:00 PM</option>
+                            <option value="14:00 PM">14:00 PM</option>
+                            <option value="15:00 PM">15:00 PM</option>
+                            <option value="16:00 PM">16:00 PM</option>
+                            <option value="17:00 PM">17:00 PM</option>
+                            <option value="18:00 PM">18:00 PM</option>
+                            <option value="19:00 PM">19:00 PM</option>
+                            <option value="20:00 PM">20:00 PM</option>
+                            <option value="21:00 PM">21:00 PM</option>
+                            <option value="22:00 PM">22:00 PM</option>
+                            <option value="23:00 PM">23:00 PM</option>
+                            <option value="00:00 AM">00:00 AM</option>
+                            <option value="01:00 AM">01:00 AM</option>
+                            <option value="02:00 AM">02:00 AM</option>
+                            <option value="03:00 AM">03:00 AM</option>
+                            <option value="04:00 AM">04:00 AM</option>
+                            <option value="05:00 AM">05:00 AM</option>
+                            <option value="06:00 AM">06:00 AM</option>
+                            <option value="07:00 AM">07:00 AM</option>
+                            <option value="08:00 AM">08:00 AM</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+
+
+                        </select><br>
+                        <label>To: </label><br>
+                        <select name="Time2" id="Time2" onchange="calculateAmount()" required>
+                            <option value="" disabled selected>Select Time</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="13:00 PM">13:00 PM</option>
+                            <option value="14:00 PM">14:00 PM</option>
+                            <option value="15:00 PM">15:00 PM</option>
+                            <option value="16:00 PM">16:00 PM</option>
+                            <option value="17:00 PM">17:00 PM</option>
+                            <option value="18:00 PM">18:00 PM</option>
+                            <option value="19:00 PM">19:00 PM</option>
+                            <option value="20:00 PM">20:00 PM</option>
+                            <option value="21:00 PM">21:00 PM</option>
+                            <option value="22:00 PM">22:00 PM</option>
+                            <option value="23:00 PM">23:00 PM</option>
+                            <option value="00:00 AM">00:00 AM</option>
+                            <option value="01:00 AM">01:00 AM</option>
+                            <option value="02:00 AM">02:00 AM</option>
+                            <option value="03:00 AM">03:00 AM</option>
+                            <option value="04:00 AM">04:00 AM</option>
+                            <option value="05:00 AM">05:00 AM</option>
+                            <option value="06:00 AM">06:00 AM</option>
+                            <option value="07:00 AM">07:00 AM</option>
+                            <option value="08:00 AM">08:00 AM</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+
+                        </select><br><br>
+                        <label>Total Amount:</label><br>
+                        <input name="tot_amount" id="tot_amount" type="text" readonly><br><br>
+
+                        <label>Payment:</label><br>  
+
+                        <input type="radio" id="payment" onclick="display()" name="payment" value="Cash"/>  
+                        <label for="Cash">Cash</label><br>
+                       
+                        <span id="disp" class="label success" style="background-color: #04AA6D;"></span>
+                        <br>
+                        <input type="radio" id="Card" name="payment" value="Card"/>
+                        <label for="Cash">Card</label><br>
+                        <div id="d1" class="field" hidden>
+                            <label><b>Card Number</b></label><br>
+                            <input type="text" placeholder="Enter 14 digit valid card number" name="cno"><br>
+
+                            <label><b>CVV</b></label><br>
+                            <input type="password" placeholder="Enter CVV" name="cvv" ><br>
+
+                            <label><b>Name on Card</b></label><br>
+                            <input type="tel" placeholder="Name" name="n1" ><br><br>
+                        </div>
+
+
+
+                        Terms and Conditions:<input type="checkbox" name="tnc" value="checked" checked/>
+                        <a href="tnc.html">read t&c </a>
+                        <br><br>
+
+
+                        <input type="reset">                       
+                        <input type="submit" value="Book">   
+
+                    </fieldset>
+                    <button style="alignment-adjust: central" onclick="myFunction()">Home</button><br>
+
+                </form>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <script>
+                        $('#Card').click(function () {
+                            $('#d1').toggle();
+                        });
+                </script>
+
+                <script>
+             var today = new Date().toISOString().split('T')[0];
+	    var nextWeekDate = new Date(new Date().getTime() + 6 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+      document.getElementsByName("dt")[0].setAttribute('min', today);
+      document.getElementsByName("dt")[0].setAttribute('max', nextWeekDate);
+
+
+                    function myFunction() {
+                        location.replace("index.html");
+                    }
+                    function calculateAmount() {
+                        var Time = parseInt(document.getElementById('Time').value);
+                        var Time2 = parseInt(document.getElementById('Time2').value);
+                        document.getElementById('tot_amount').value = (Time2 - Time) * (500);
+
+
+
+                    }
+                    function display() {
+                        if (document.getElementById('payment').checked) {
+                            document.getElementById("disp").innerHTML
+                                    = document.getElementById("payment").value
+                                    + "->> Cash to be paid before entry!<br>Please read the terms and conditions!";
+                        }
+
+                        else {
+                            document.getElementById("disp").innerHTML
+                                    = "You have not selected any option!!";
+                        }
+                    }
+
+                </script>
+                </body>
+
+                </html>
